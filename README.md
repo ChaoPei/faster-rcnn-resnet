@@ -17,6 +17,12 @@ To reduce the memory usage, we use batchnorm layer in [Microsoft's caffe](https:
    merged into scale layer's, see tools/merge_bn_scale.py form more detail.
 4. Use Online-Hard-Example-Mining while training.
 
+## Rocco add modification
+
+1. Fix proposal layer error
+2. Fix python run env in ubuntu
+3. Combine resnet train and test scripts
+
 # Installation
 The usage is similar to [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn).
 
