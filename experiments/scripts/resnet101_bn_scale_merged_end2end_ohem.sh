@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -x
-set -e
 
 TRAIN_IMDB="voc_2007_trainval"
 TEST_IMDB="voc_2007_test"
@@ -10,7 +9,7 @@ MODEL="ResNet101_BN_SCALE_Merged"
 TRAIN_NET="faster_rcnn_end2end"
 
 # save log to file
-LOG="experiments/logs/faster_rcnn_end2end_resnet101_bn_scale_merged_ohem.txt.`date + '%Y-%m-%d_%H-%M-%S'`"
+LOG="experiments/logs/${TRAIN_NET}_${MODEL}_OHEM.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
 exec &> >(tee -a "$LOG")
 echo Logging output to "$LOG"
 
@@ -25,4 +24,4 @@ echo Logging output to "$LOG"
   --def models/${PT_DIR}/${MODEL}/${TRAIN_NET}_ohem/test.prototxt \
   --net output/${TRAIN_NET}/${TRAIN_IMDB}/resnet101_faster_rcnn_bn_scale_merged_end2end_ohem_iter_70000.caffemodel \
   --imdb ${TEST_IMDB} \
-  --cfg experiments/cfgs/${TRAIN_NET}.yml 
+  --cfg experiments/cfgs/${TRAIN_NET}_ohem.yml 
