@@ -21,7 +21,7 @@ echo Logging output to "$LOG"
   --cfg experiments/cfgs/${TRAIN_NET}_ohem.yml 
 
 ./tools/test_net.py --gpu 0 \
-  --def models/${PT_DIR}/${MODEL}/${TRAIN_NET}_ohem/test.prototxt \
+  --def models/${PT_DIR}/${MODEL}_OHEM/${TRAIN_NET}_ohem/test.prototxt \
   --net output/${TRAIN_NET}/${TRAIN_IMDB}/resnet101_faster_rcnn_bn_scale_merged_end2end_ohem_iter_70000.caffemodel \
   --imdb ${TEST_IMDB} \
   --cfg experiments/cfgs/${TRAIN_NET}_ohem.yml 
